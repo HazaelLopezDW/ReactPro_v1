@@ -7,14 +7,14 @@ export const LazyLayout = () => {
     <div>
         <h1>LazyLayout Page</h1>
         {/** Rutas hijas iran aquí */}
-        <ul>
-            <li>
+        <ul className="list-group">
+            <li className="list-group-item list-group-item-info">
                 <NavLink to="lazy1">Lazy 1</NavLink>
             </li>
-            <li>
+            <li className="list-group-item list-group-item-info">
                 <NavLink to="lazy2">Lazy 2</NavLink>
             </li>
-            <li>
+            <li className="list-group-item list-group-item-info">
                 <NavLink to="lazy3">Lazy 3</NavLink>
             </li>
         </ul>
