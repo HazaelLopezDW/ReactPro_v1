@@ -15,7 +15,7 @@ export const routes: Route[] = [
         name: 'Lazy-1'
     },
     {
-        to: '/lazy12',
+        to: '/lazy2',
         path: 'lazy2',
         Component: LazyPage2,
         name: 'Lazy-2'
