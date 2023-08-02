@@ -21,7 +21,7 @@ export const Navigation = () => {
                             <img src={logo} alt='react logo' />
                             <ul>
                                 {/* TODO: Crear NavLink dimanicos */}
-                                {routes.map(({to, name}) => (
+                                {routes.map(({ to, name }) => (
                                     <li key={to}>
                                         <NavLink
                                             to={to}
@@ -35,7 +35,7 @@ export const Navigation = () => {
                             </ul>
                         </nav>
                         <Routes>
-                            {routes.map(({to, path, Component}) => <Route key={to} path={path} element={<Component/>}/>)}
+                            {routes.map(({ to, path, Component }) => <Route key={to} path={path} element={<Component />} />)}
                             <Route path='/*' element={<Navigate to={routes[0].to} replace />} />
                         </Routes>
                     </div>
