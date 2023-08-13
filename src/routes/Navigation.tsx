@@ -1,10 +1,9 @@
 import {
-    BrowserRouter,
-    NavLink,
-    Navigate,
-    Route,
-    Routes
-} from 'react-router-dom';
+         BrowserRouter,
+         NavLink,
+         Navigate,
+         Route,
+         Routes } from 'react-router-dom';
 import logo from '../logo.svg';
 import { routes } from './routes';
 import { Suspense } from 'react';
