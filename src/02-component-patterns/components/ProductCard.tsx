@@ -12,34 +12,57 @@ interface Product {
     img?: string;
 }
 
+export const ProductImage = ({ img = '' }) => (
+    <img className={styles.productImg} src={(img) ? img : noImage} alt='Product Image' />
+);
+
+export const ProductTitle = ({ title }: { title: string }) => (
+    <span className={styles.productDescription}>{title}</span>
+);
+
+
+interface ProductButtonsProps {
+    counter: number;
+    increaseBy: (value: number) => void;
+}
+
+export const ProductButtons = ({counter, increaseBy }: ProductButtonsProps) => {
+    return (
+        <div className={styles.buttonsContainer}>
+            <button
+                onClick={() => increaseBy(-1)}
+                className={styles.buttonMinus}
+            >
+                -
+            </button>
+
+            <div className={styles.countLabel}>{counter}</div>
+
+            <button
+                onClick={() => increaseBy(+1)}
+                className={styles.buttonAdd}
+            >
+                +
+            </button>
+        </div>
+    );
+}
+
 export const ProductCard = ({ product }: Props) => {
 
-    const {counter, increaseBy} = useProduct();
+    const { counter, increaseBy } = useProduct();
 
     return (
         <>
             <div className={styles.productCard}>
-                <img className={styles.productImg} src={(product.img) ? product.img : noImage } alt='Coffee Mug'/>
+                <ProductImage img={product.img} />
 
-                <span className={styles.productDescription}>{product.title}</span>
+                <ProductTitle title={product.title} />
 
-                <div className={styles.buttonsContainer}>
-                    <button 
-                        onClick={() => increaseBy(-1)}
-                        className={styles.buttonMinus}
-                    > 
-                        - 
-                    </button>
-
-                    <div className={styles.countLabel}>{counter}</div>
-
-                    <button 
-                        onClick={() => increaseBy(+1)}
-                        className={styles.buttonAdd}
-                    > 
-                        + 
-                    </button>
-                </div>
+                <ProductButtons 
+                    counter={counter} 
+                    increaseBy={increaseBy}
+                />
             </div>
         </>
     )

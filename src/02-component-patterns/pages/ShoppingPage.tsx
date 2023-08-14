@@ -1,6 +1,5 @@
 import { ProductCard } from "../components/ProductCard"
 
-
 const product = {
     id: '1',
     title: 'Coffe Mug - Card',
