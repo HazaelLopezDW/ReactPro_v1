@@ -19,8 +19,16 @@ export const ShoppingPage = () => {
           flexWrap: 'wrap'
         }}>
           <ProductCard product={product}>
+            <ProductCard.Image />
+            <ProductCard.Title title={'Hola cafe'}/>
+            <ProductCard.Buttons counter={0} increaseBy={function (value: number): void {
+              throw new Error("Function not implemented.")
+            } }/>
+          </ProductCard>
+
+          <ProductCard product={product}>
             <ProductImage />
-            <ProductTitle title={''}/>
+            <ProductTitle title={'Hola cafe'}/>
             <ProductButtons counter={0} increaseBy={function (value: number): void {
               throw new Error("Function not implemented.")
             } }/>
